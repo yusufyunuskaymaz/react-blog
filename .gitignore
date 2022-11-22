@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /deneme
+/old
 /.pnp
 .pnp.js
 
