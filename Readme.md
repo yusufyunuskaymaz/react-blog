@@ -1,3 +1,38 @@
+### React Blog App
 
-## React Blog App
 
+![Animation](https://github.com/clarusway/clarusway-full-stack-tr-12-22/raw/main/react/projects/005-Recipe-App/food-search-app.gif)
+🎯 [click here to see page](https://recipe2app.netlify.app/)
+### In this project, I learned;
+
+✨ React Props
+
+✨ React State Logic
+
+✨ React Hooks (useState, useNavigate, useLocation)
+
+✨ Firebase Update, Delete, Put, Get
+
+✨ Login Management With Firebase
+
+✨ Material UI
+
+✨ Destrucring Methods
+
+✨ Getting info with Api
+
+✨ Async-await, Axios
+
+✨ React Router
+
+✨ Local and Session Storage
+
+✨ Deploy with Vercel
+
+### In this project, I learned;
+
+🎯 improve coding skills within React, React Hooks, React Router and Javascript
+
+🎯 use git commands (push, pull, commit, add etc.) and Github as Version Control System.
+
+### `yarn start`
