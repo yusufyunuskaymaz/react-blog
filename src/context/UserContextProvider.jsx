@@ -13,6 +13,7 @@ const UserContextProvider =({children})=>{
         userObserver(setCurrentUser);
       }, []);
       console.log("deneme")
+      console.log("deneme 2")
 
       return (
         <UserContext.Provider value={{currentUser}}>

@@ -1,7 +1,6 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
@@ -11,6 +10,9 @@ import { useNavigate } from "react-router-dom";
 import {LogIn} from "../../auth/firebase"
 import { UserContext } from "../../context/UserContextProvider";
 import { useContext } from "react";
+// import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+
 
 
 function Login() {
@@ -78,28 +80,35 @@ function Login() {
           />
           {email} <br />
           {password}
-
+          
+        
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="secondary"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{}}
             onClick={handleLogin}
           >
             Login
           </Button>
+          <Typography sx={{textAlign:"center", mt:1}}>
+          OR
+        </Typography>
+        <Link to="/register-user"><Typography type="button" sx={{color:"gray", marginTop:0, textAlign:"center"}} component="h6" variant="p">
+           Register From Here
+        </Typography ></Link>
         </Box>
       </Box>
 
-      <Typography variant="body2" color="text.secondary" align="center">
+      {/* <Typography variant="body2" color="text.secondary" align="center">
         {"Copyright © "}
         <Link color="inherit" href="https://www.clarusway.com/">
           Clarusway
         </Link>{" "}
         {new Date().getFullYear()}
         {"."}
-      </Typography>
+      </Typography> */}
     </Container>
   );
 }
