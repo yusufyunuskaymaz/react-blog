@@ -18,7 +18,7 @@ export const auth = getAuth(firebase)
 export const createUser = async (email,password, navigate)=>{
   try{
     const currentSignedUser = await createUserWithEmailAndPassword(auth,email,password)
-  console.log(currentSignedUser)
+  // console.log(currentSignedUser)
   navigate("/")
   }catch (error){
     alert(error.message)
@@ -43,10 +43,9 @@ export const userObserver = (setCurrentUser) => {
     onAuthStateChanged(auth, (user)=>{
       if(user){
         setCurrentUser(user)
-        console.log(user, "user")
+        alert("user alındı")
       }else{
         setCurrentUser(false)
-        console.log("çıkış")
       }
     })
 }
