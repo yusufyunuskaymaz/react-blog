@@ -11,7 +11,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebase = initializeApp(firebaseConfig);
+export const firebase = initializeApp(firebaseConfig);
 
 export const auth = getAuth(firebase)
 
@@ -28,6 +28,7 @@ export const createUser = async (email,password, navigate)=>{
 export const LogIn = async (email,password,navigate)=>{
     try{
       const currentLoggedInUser = await signInWithEmailAndPassword(auth,email,password)
+      console.log("başarılı");
     navigate("/")
     }catch (error){
       console.log(error.message)
@@ -43,7 +44,6 @@ export const userObserver = (setCurrentUser) => {
     onAuthStateChanged(auth, (user)=>{
       if(user){
         setCurrentUser(user)
-        alert("user alındı")
       }else{
         setCurrentUser(false)
       }

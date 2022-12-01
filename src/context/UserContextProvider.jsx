@@ -9,11 +9,8 @@ const UserContextProvider =({children})=>{
     const [currentUser, setCurrentUser] = useState(false);
 
     useEffect(() => {
-        console.log("=>rendered")
         userObserver(setCurrentUser);
       }, []);
-      console.log("deneme")
-      console.log("deneme 2")
 
       return (
         <UserContext.Provider value={{currentUser}}>
