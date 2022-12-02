@@ -10,6 +10,7 @@ import { userObserver } from "../auth/firebase";
 import Settings from "../pages/Settings/Settings";
 import Profile from "../pages/Profile/Profile";
 import AddPost from "../pages/AddPost/AddPost";
+import PostDetail from "../components/PostDetail/PostDetail";
 
 const AppRouter = () => {
   return (
@@ -27,6 +28,9 @@ const AppRouter = () => {
         </Route>
         <Route path="add-post" element={<PrivateRouter />}>
           <Route path="" element={<AddPost />} />
+        </Route>
+        <Route path="post-detail" element={<PrivateRouter />} >
+          <Route path="" element={<PostDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

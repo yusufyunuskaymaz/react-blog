@@ -1,9 +1,12 @@
 import React from "react";
 import { useContext } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { deletePost, useFetch } from "../../auth/functions";
+import PostDetail from "../../components/PostDetail/PostDetail";
 import { UserContext } from "../../context/UserContextProvider";
 
 const Home = () => {
+  const navigate = useNavigate()
   const {currentUser} = useContext(UserContext)
   const articles = useFetch();
   const handleDelete = (id,email)=>{
@@ -15,13 +18,17 @@ const Home = () => {
       alert("You don't have permission")
     }
   }
+  const readMore = (article)=>{
+    navigate("post-detail", {state:article})
+  }
   return (
     <div className="container mt-5">
+      <h1 className="display-3 text-danger text-center mb-4">Articles</h1>
       <div className="row gap-3">
         {articles.map((article) => {
           const {id,email,content,title,keywords,imgUrl} = article
           return (
-            <div className="col  ">
+            <div className="col" key={id}>
               <div className="card" style={{ width: "18rem" }}>
                 <img src={imgUrl} className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -29,17 +36,17 @@ const Home = () => {
                   <p className="card-text">
                     {content.length > 150 && content.slice(0,150)+"..."}
                   </p>
-                  <p className="card-text">
-                    {keywords}
+                  <p className="card-text text-muted">
+                    keywords: {keywords}
                   </p>
-                  <p className="card-text">
+                  <p className="card-text text-muted">
                    author: {email}
                   </p>
                   <div className="d-flex justify-content-between">
-                  <a href="#" className="btn btn-primary">
+                  <a  onClick={()=>readMore(article)} className="btn btn-primary">
                     Read More...
                   </a>
-                  <a href="#" onClick={()=>handleDelete(id,email)} className="btn btn-danger">
+                  <a  onClick={()=>handleDelete(id,email)} className="btn btn-danger">
                     Delete
                   </a>
                   </div>
@@ -50,6 +57,7 @@ const Home = () => {
         })}
       </div>
     </div>
+   
   );
 };
 
