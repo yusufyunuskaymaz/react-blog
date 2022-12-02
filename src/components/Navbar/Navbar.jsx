@@ -76,6 +76,8 @@ export default function Login() {
                 {currentUser?.email ? (
                   <span>
                     <Link to="profile"><MenuItem>Profile</MenuItem></Link>
+                    <Link to="/"><MenuItem>Home</MenuItem></Link>
+                    <Link to="add-post"><MenuItem>Add Post</MenuItem></Link>
                     <MenuItem onClick={handleLogout}>Logout</MenuItem>
                     <Link to="settings"><MenuItem>Settings</MenuItem></Link>
                   </span>

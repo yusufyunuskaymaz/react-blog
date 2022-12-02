@@ -9,6 +9,7 @@ import { UserContext } from "../context/UserContextProvider";
 import { userObserver } from "../auth/firebase";
 import Settings from "../pages/Settings/Settings";
 import Profile from "../pages/Profile/Profile";
+import AddPost from "../pages/AddPost/AddPost";
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,9 @@ const AppRouter = () => {
         <Route path="settings" element={<Settings />} />
         <Route path="profile" element={<PrivateRouter />}>
           <Route path="" element={<Profile />} />
+        </Route>
+        <Route path="add-post" element={<PrivateRouter />}>
+          <Route path="" element={<AddPost />} />
         </Route>
       </Routes>
     </BrowserRouter>

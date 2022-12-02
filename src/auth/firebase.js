@@ -18,7 +18,6 @@ export const auth = getAuth(firebase)
 export const createUser = async (email,password, navigate)=>{
   try{
     const currentSignedUser = await createUserWithEmailAndPassword(auth,email,password)
-  // console.log(currentSignedUser)
   navigate("/")
   }catch (error){
     alert(error.message)
@@ -28,7 +27,6 @@ export const createUser = async (email,password, navigate)=>{
 export const LogIn = async (email,password,navigate)=>{
     try{
       const currentLoggedInUser = await signInWithEmailAndPassword(auth,email,password)
-      console.log("başarılı");
     navigate("/")
     }catch (error){
       console.log(error.message)
